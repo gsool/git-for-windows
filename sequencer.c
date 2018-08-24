@@ -4715,7 +4715,7 @@ out:
 }
 
 /* skip picking commits whose parents are unchanged */
-static int skip_unnecessary_picks(struct repository *r,
+int skip_unnecessary_picks(struct repository *r,
 				  struct todo_list *todo_list,
 				  struct object_id *base_oid)
 {
