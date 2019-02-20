@@ -1424,6 +1424,8 @@ static int do_push_stash(struct pathspec ps, const char *stash_msg, int quiet,
 		if (keep_index < 1) {
 			struct child_process cp = CHILD_PROCESS_INIT;
 
+			discard_cache();
+
 			cp.git_cmd = 1;
 			argv_array_pushl(&cp.args, "reset", "-q", "--", NULL);
 			add_pathspecs(&cp.args, ps);
